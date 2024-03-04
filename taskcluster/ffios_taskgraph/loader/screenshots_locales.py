@@ -2,14 +2,11 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from __future__ import print_function, unicode_literals
 
-import os
-
-from copy import deepcopy
-from chunkify import chunkify
 from math import log, ceil
+
 from taskgraph.loader.transform import loader as base_loader
+from ffios_taskgraph.util.chunkify import chunkify
 
 from ..screenshots_locales import get_screenshots_locales
 
@@ -29,7 +26,7 @@ def loader(kind, path, config, params, loaded_tasks):
     # Taskcluster sorts task names alphabetically, we need numbers to be zero-padded.
     max_number_of_digits = _get_number_of_digits(chunks)
 
-    jobs = {
+    tasks = {
         str(this_chunk).zfill(max_number_of_digits): {
             "attributes": {
                 "chunk_locales": chunkify(filtered_locales, this_chunk, chunks),
@@ -40,7 +37,7 @@ def loader(kind, path, config, params, loaded_tasks):
         for this_chunk in range(1, chunks + 1)
     }
 
-    config["jobs"] = jobs
+    config["tasks"] = tasks
 
     return base_loader(kind, path, config, params, loaded_tasks)
 

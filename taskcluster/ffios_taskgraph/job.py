@@ -2,47 +2,34 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from __future__ import absolute_import, print_function, unicode_literals
 
-from taskgraph.transforms.job import run_job_using, configure_taskdesc_for_run
-from taskgraph.util import path
+from taskgraph.transforms.run import run_task_using, configure_taskdesc_for_run
 from taskgraph.util.schema import Schema, taskref_or_string
 from voluptuous import Required, Optional
-from six import text_type
 
 from pipes import quote as shell_quote
 
 secret_schema = {
-    Required("name"): text_type,
-    Required("path"): text_type,
-    Required("key"): text_type,
-    Optional("json"): bool,
-}
-
-dummy_secret_schema = {
-    Required("content"): text_type,
-    Required("path"): text_type,
+    Required("name"): str,
+    Required("path"): str,
+    Required("key"): str,
     Optional("json"): bool,
 }
 
 run_commands_schema = Schema({
     Required("using"): "run-commands",
-    Optional("pre-commands"): [[text_type]],
+    Optional("pre-commands"): [[str]],
     Required("commands"): [[taskref_or_string]],
-    Required("workdir"): text_type,
+    Required("workdir"): str,
     Optional("use-caches"): bool,
     Optional("secrets"): [secret_schema],
-    Optional("dummy-secrets"): [dummy_secret_schema],
 })
 
 
-@run_job_using("docker-worker", "run-commands", schema=run_commands_schema)
-def configure_run_commands_schema(config, job, taskdesc):
-    run = job["run"]
+@run_task_using("docker-worker", "run-commands", schema=run_commands_schema)
+def configure_run_commands_schema(config, task, taskdesc):
+    run = task["run"]
     pre_commands = run.pop("pre-commands", [])
-    pre_commands += [
-        _generate_dummy_secret_command(secret) for secret in run.pop("dummy-secrets", [])
-    ]
     pre_commands += [
         _generate_secret_command(secret) for secret in run.get("secrets", [])
     ]
@@ -51,30 +38,17 @@ def configure_run_commands_schema(config, job, taskdesc):
 
     run["command"] = _convert_commands_to_string(all_commands)
     _inject_secrets_scopes(run, taskdesc)
-    _set_run_task_attributes(job)
-    configure_taskdesc_for_run(config, job, taskdesc, job["worker"]["implementation"])
+    _set_run_task_attributes(task)
+    configure_taskdesc_for_run(config, task, taskdesc, task["worker"]["implementation"])
 
 
 def _generate_secret_command(secret):
     secret_command = [
-        "python3",  # XXX Other mobile projects run this script under python2
+        "python3",
         "taskcluster/scripts/get-secret.py",
         "-s", secret["name"],
         "-k", secret["key"],
         "-f", secret["path"],
-    ]
-    if secret.get("json"):
-        secret_command.append("--json")
-
-    return secret_command
-
-
-def _generate_dummy_secret_command(secret):
-    secret_command = [
-        "python3",  # XXX Other mobile projects run this script under python2
-        "taskcluster/scripts/write-dummy-secret.py",
-        "-f", secret["path"],
-        "-c", secret["content"],
     ]
     if secret.get("json"):
         secret_command.append("--json")
@@ -98,7 +72,7 @@ def _convert_commands_to_string(commands):
                     part_string = part["task-reference"]
                     should_task_reference = True
                 else:
-                    raise ValueError('Unsupported dict: {}'.format(part))
+                    raise ValueError(f'Unsupported dict: {part}')
             else:
                 part_string = part
 
@@ -126,7 +100,7 @@ def _inject_secrets_scopes(run, taskdesc):
     scopes.extend(new_secret_scopes)
 
 
-def _set_run_task_attributes(job):
-    run = job["run"]
+def _set_run_task_attributes(task):
+    run = task["run"]
     run["cwd"] = "{checkout}"
     run["using"] = "run-task"

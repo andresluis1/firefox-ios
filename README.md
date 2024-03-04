@@ -1,14 +1,13 @@
-Firefox for iOS [![codebeat badge](https://codebeat.co/badges/67e58b6d-bc89-4f22-ba8f-7668a9c15c5a)](https://codebeat.co/projects/github-com-mozilla-firefox-ios) [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=57bf25c0f096bc01001e21e0&branch=main&build=latest)](https://dashboard.buddybuild.com/apps/57bf25c0f096bc01001e21e0/build/latest) [![codecov](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main/graph/badge.svg)](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main)
+Firefox for iOS [![codebeat badge](https://codebeat.co/badges/67e58b6d-bc89-4f22-ba8f-7668a9c15c5a)](https://codebeat.co/projects/github-com-mozilla-firefox-ios) [![codecov](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main/graph/badge.svg)](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main)
 ===============
 
-Download on the [App Store](https://itunes.apple.com/app/firefox-web-browser/id989804926).
+Download on the [App Store](https://apps.apple.com/app/firefox-web-browser/id989804926).
+
 
 This branch (main)
 -----------
 
-This branch works with [Xcode 12.5](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_12.5/Xcode_12.5.xip), Swift 5.4 and supports iOS 12.4 and above.
-
-*Please note:* due to dependency issues, development of Firefox-iOS is currently only supported on Intel based Macs, and not Apple Silicon based Macs.
+This branch works with [Xcode 15.2](https://developer.apple.com/download/all/?q=xcode), Swift 5.8 and supports iOS 17.2 and above.
 
 Please make sure you aim your pull requests in the right direction.
 
@@ -17,16 +16,23 @@ For bug fixes and features for a specific release, use the version branch.
 Getting involved
 ----------------
 
-Want to contribute but don't know where to start? Here is a list of [issues that are contributor friendly](https://github.com/mozilla-mobile/firefox-ios/labels/Contributor%20OK)
+We encourage you to participate in this open source project. We love Pull Requests, Issue Reports, Feature Requests or any kind of positive contribution. Please read the [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/) and our [Contributing guidelines](https://github.com/mozilla-mobile/firefox-ios/blob/main/CONTRIBUTING.md) first. 
+
+- You can [file a new issue](https://github.com/mozilla-mobile/firefox-ios/issues/new/choose) or research [existing bugs](https://github.com/mozilla-mobile/firefox-ios/issues)
+
+If more information is required or you have any questions then we suggest reaching out to us via:
+- Chat on Element channel [#fx-ios](https://chat.mozilla.org/#/room/#fx-ios:mozilla.org) for general discussion, or write DMs to specific teammates for questions.
+- Open a [Github discussion](https://github.com/mozilla-mobile/firefox-ios/discussions) which can be used for general questions.
+
+Want to contribute on the codebase but don't know where to start? Here is a list of [issues that are contributor friendly](https://github.com/mozilla-mobile/firefox-ios/labels/Contributor%20OK), but make sure to read the [Contributing guidelines](https://github.com/mozilla-mobile/firefox-ios/blob/main/CONTRIBUTING.md) first. 
 
 Building the code
 -----------------
 
 1. Install the latest [Xcode developer tools](https://developer.apple.com/xcode/downloads/) from Apple.
-1. Install Carthage, Node, and a Python 3 virtualenv for localization scripts:
+1. Install, [Brew](https://brew.sh), Node, and a Python3 virtualenv for localization scripts:
     ```shell
     brew update
-    brew install carthage
     brew install node
     pip3 install virtualenv
     ```
@@ -34,13 +40,18 @@ Building the code
     ```shell
     git clone https://github.com/mozilla-mobile/firefox-ios
     ```
-1. Pull in the project dependencies:
+1. Install Node.js dependencies, build user scripts and update content blocker:
     ```shell
     cd firefox-ios
     sh ./bootstrap.sh
     ```
-1. Open `Client.xcodeproj` in Xcode.
-1. Build the `Fennec` scheme in Xcode.
+1. Open the `Client.xcodeproj` under the `firefox-ios` folder in Xcode.
+1. Make sure to select the `Fennec` [scheme](https://developer.apple.com/documentation/xcode/build-system?changes=_2) in Xcode.
+1. Select the destination device you want to build on.
+1. Run the app with `Cmd + R` or by pressing the `build and run` button.
+
+⚠️ Important: In case you have dependencies issues with SPM, please try the following:
+- Xcode -> File -> Packages -> Reset Package Caches
 
 Building User Scripts
 -----------------
@@ -72,11 +83,6 @@ To simplify the build process, these compiled files are checked-in to this repos
 ```shell
 npm run build
 ```
-
-Contributing
------------------
-
-Want to contribute to this repository? Check out [Contributing Guidelines](https://github.com/mozilla-mobile/firefox-ios/blob/main/CONTRIBUTING.md)
 
 License
 -----------------
