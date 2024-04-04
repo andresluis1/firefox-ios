@@ -45,12 +45,6 @@ HTMLElement.prototype.getAutocompleteInfo = function () {
   };
 };
 
-// Bug 1835024. Webkit doesn't support `checkVisibility` API
-// https://drafts.csswg.org/cssom-view-1/#dom-element-checkvisibility
-HTMLElement.prototype.checkVisibility = function (options) {
-  throw new Error(`Not implemented: WebKit doesn't support checkVisibility `);
-};
-
 // This function  helps us debug better when an error occurs because a certain mock is missing
 const withNotImplementedError = obj =>
   new Proxy(obj, {
@@ -106,7 +100,7 @@ export const XPCOMUtils = withNotImplementedError({
     prop,
     pref,
     defaultValue = null,
-    onUpdate = null,
+    onUpdate,
     transform = val => val
   ) => {
     if (!Object.keys(IOSAppConstants.prefs).includes(pref)) {
@@ -171,11 +165,13 @@ export const Services = withNotImplementedError({
       }
 
       // eslint-disable-next-line no-undef
-      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage({
-        type: "scalar",
-        name: scalarName,
-        value: scalarValue,
-      });
+      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage(
+        JSON.stringify({
+          type: "scalar",
+          object: scalarName,
+          value: scalarValue,
+        })
+      );
     },
     recordEvent: (category, method, object, value, extra) => {
       // For now, we only care about the address form telemetry
@@ -194,14 +190,16 @@ export const Services = withNotImplementedError({
       }
 
       // eslint-disable-next-line no-undef
-      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage({
-        type: "event",
-        category,
-        method,
-        object,
-        value,
-        extra,
-      });
+      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage(
+        JSON.stringify({
+          type: "event",
+          category,
+          method,
+          object,
+          value,
+          extra,
+        })
+      );
     },
   }),
   // TODO(FXCM-936): we should use crypto.randomUUID() instead of Services.uuid.generateUUID() in our codebase
