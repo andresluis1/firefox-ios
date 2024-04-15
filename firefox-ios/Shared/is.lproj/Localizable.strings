@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Fræðast meira";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Til að vista og fylla út innskráningar og lykilorð sjálfkrafa skaltu virkja Face ID andlitsauðkenni, Touch ID fingrafaraauðkenni eða aðgangskóða tækis.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Halda áfram";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Sía";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Vistaðar innskráningar munu birtast hér. Ef þú vistaðir innskráningar þínar í %@ á öðru tæki, skaltu skrá þig inn á reikninginn þinn.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Engar innskráningar fundust";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Engar niðurstöður passa við leitina þína.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Engar samsvarandi innskráningar";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Hætta við";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Leita að innskráningum";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Veldu lykilorð til að fylla inn";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "Slóð (skipta út leitarskilyrði fyrir %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Fylla sjálfvirkt út kortanúmer";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Eyða öllum gögnum vefsvæðis";
