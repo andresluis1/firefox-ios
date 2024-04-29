@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Ulteriori informazioni";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Per salvare e compilare automaticamente le credenziali e le password, attiva Face ID, Touch ID o un codice per il dispositivo.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Continua";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtra";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Le credenziali salvate verranno visualizzate qui. Se hai salvato i tuoi dati di accesso in %@ su un altro dispositivo, accedi al tuo account.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Nessuna credenziale salvata";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Non ci sono risultati corrispondenti ai criteri di ricerca inseriti.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Nessuna corrispondenza nelle credenziali";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Annulla";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Cerca nelle credenziali";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Seleziona la password da compilare";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "Indirizzo (sostituisci la chiave di ricerca con %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Compila automaticamente carte di credito";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Elimina tutti i dati dei siti web";
