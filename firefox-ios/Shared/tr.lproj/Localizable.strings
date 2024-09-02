@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Daha fazla bilgi al";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Hesap bilgilerinizi kaydetmek ve otomatik doldurmak için Face ID’yi, Touch ID’yi veya cihaz parolasını etkinleştirin.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Devam et";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filtrele";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Kaydedilen hesaplar burada görünecektir. Hesaplarınızı farklı bir cihazda %@’a kaydettiyseniz hesabınıza giriş yapın.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Hiç hesap bulunamadı";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Aramanızla eşleşen sonuç bulunamadı.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Eşleşen hesap bulunamadı";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "İptal";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Hesaplarda ara";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Doldurulacak parolayı seçin";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "Adres (Sorgunun yerine %s gelecek)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Kredi kartlarını otomatik doldur";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Tüm web sitesi verilerini temizle";
