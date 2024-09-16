@@ -1,14 +1,11 @@
 /* This value is used as the header for the remember card page. The placeholder is for the app name. */
-"CreditCard.RememberCard.Header.v115" = "Enrollit titouroù ho kartenn en un doare diogel gant %@ evit paeañ buanoc’h ar c’hentañ gwech.";
-
-/* This value is used as the title for the Yes button in the remember credit card page */
-"CreditCard.RememberCard.MainButtonTitle.v115" = "Ya";
+"CreditCard.RememberCard.Header.v122" = "%@ a enrineg ho niverenn gartenn. Ne vo ket enrollet ho boneg surentez.";
 
 /* This value is used as the title for the Yes button in the remember credit card page */
 "CreditCard.RememberCard.MainButtonTitle.v122" = "Enrollañ";
 
 /* This value is used as the title for the remember credit card page */
-"CreditCard.RememberCard.MainTitle.v115" = "Derc’hel soñj eus ar gartenn-mañ?";
+"CreditCard.RememberCard.MainTitle.v122" = "Enrollañ ar gartenn-mañ e surentez?";
 
 /* This value is used as the title for the Not Now button in the remember credit card page */
 "CreditCard.RememberCard.SecondaryButtonTitle.v115" = "Ket bremañ";
