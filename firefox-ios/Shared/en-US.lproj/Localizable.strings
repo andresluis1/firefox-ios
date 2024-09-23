@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Learn More";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "To save and autofill logins and passwords, enable Face ID, Touch ID or a device passcode.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Continue";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filter";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Saved logins will show up here. If you saved your logins to %@ on a different device, sign in to your account.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "No logins found";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "There are no results matching your search.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "No matching logins";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Cancel";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Search logins";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Select a password to fill";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "URL (Replace Query with %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Autofill Credit Cards";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Clear All Website Data";
