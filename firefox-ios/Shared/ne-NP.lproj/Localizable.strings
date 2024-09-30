@@ -577,9 +577,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "थप जान्नुहोस्";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "लग इनहरू र पासवर्डहरू बचत गर्न र स्वत: भर्नको लागि, फेस आईडी, टच आईडी वा यन्त्र पासकोड सक्षम गर्नुहोस्।";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "जारी राख्नुहोस्";
 
@@ -625,20 +622,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "फिल्टर";
 
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "कुनै पनि लगइनहरु फेला परेनन्";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "तपाईको खोजसँग मिल्ने कुनै पनि परिणामहरू छैनन्।";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "कुनै मिल्ने लगइनहरू छैनन्";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "रद्द गर्नुहोस्";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "लगइनहरु खोज्नुहोस्";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "भर्नको लागि कुनै एउटा पासवर्ड चयन गर्नुहोस्";

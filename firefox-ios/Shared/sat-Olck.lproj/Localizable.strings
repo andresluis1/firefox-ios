@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "ᱰᱷᱮᱨ ᱥᱮᱬᱟᱭ ᱢᱮ";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "ᱵᱚᱞᱚ ᱠᱚ ᱟᱨ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱠᱚ ᱥᱟᱺᱪᱟᱣ ᱞᱟᱹᱜᱤᱫ, ᱢᱮᱫᱦᱟᱸ ID, ᱴᱤᱯᱟᱹᱶ ID ᱟᱨᱵᱟᱝᱠᱷᱟᱱ ᱢᱤᱫᱴᱟᱝ ᱥᱟᱫᱷᱚᱱ ᱫᱟᱱᱟᱝᱠᱳᱰ ᱥᱟᱺᱪᱟᱣ ᱢᱮ ᱾";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "ᱞᱟᱦᱟᱜ ᱢᱮ";
 
@@ -694,20 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ᱪᱷᱟᱹᱱᱤ";
 
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "ᱵᱚᱞᱚ ᱠᱚ ᱵᱟᱭ ᱧᱟᱢ ᱞᱮᱱᱟ";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "ᱟᱢᱟᱜ ᱥᱮᱸᱫᱽᱨᱟ ᱥᱟᱞᱟᱜ ᱢᱮᱲᱟᱣᱜ ᱠᱟᱱ ᱛᱮᱞᱟ ᱵᱟᱭ ᱧᱟᱢ ᱞᱟᱱᱟ ᱾";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "ᱵᱚᱞᱚ ᱠᱚ ᱵᱟᱝ ᱢᱮᱲᱟᱣᱜ ᱠᱟᱱᱟ";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "ᱵᱟᱹᱰᱨᱟᱹ";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "ᱞᱚᱜᱤᱱ ᱠᱚ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "ᱯᱩᱨᱟᱹᱣ ᱞᱟᱹᱜᱤᱫ ᱫᱟᱱᱟᱝ ᱥᱟᱵᱟᱫᱽ ᱵᱟᱪᱷᱟᱣ ᱢᱮ";
@@ -1155,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "URL (%s ᱥᱟᱞᱟᱜ ᱵᱚᱫᱚᱞ ᱢᱮ)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "ᱠᱨᱮᱰᱤᱴ ᱠᱟᱰ ᱟᱡ ᱛᱮ ᱯᱮᱨᱮᱡᱽ ᱢᱮ";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "ᱡᱚᱛᱚ ᱣᱮᱵ ᱥᱟᱭᱤᱴ ᱥᱟᱠᱷᱤᱭᱟᱛ ᱯᱷᱟᱨᱪᱟᱭ ᱢᱮ";
