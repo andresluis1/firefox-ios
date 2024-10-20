@@ -8,10 +8,17 @@ import Overrides from "resource://gre/modules/Overrides.ios.js";
 /* eslint mozilla/use-isInstance: 0 */
 HTMLSelectElement.isInstance = element => element instanceof HTMLSelectElement;
 HTMLInputElement.isInstance = element => element instanceof HTMLInputElement;
+HTMLIFrameElement.isInstance = element => element instanceof HTMLIFrameElement;
 HTMLFormElement.isInstance = element => element instanceof HTMLFormElement;
 ShadowRoot.isInstance = element => element instanceof ShadowRoot;
 
 HTMLElement.prototype.ownerGlobal = window;
+
+// We cannot mock this in WebKit because we lack access to low-level APIs.
+// For completeness, we simply return true when the input type is "password".
+HTMLInputElement.prototype.hasBeenTypePassword = function () {
+  return this.type === "password";
+};
 
 HTMLInputElement.prototype.setUserInput = function (value) {
   this.value = value;
@@ -43,12 +50,6 @@ HTMLElement.prototype.getAutocompleteInfo = function () {
       ? autocomplete
       : "",
   };
-};
-
-// Bug 1835024. Webkit doesn't support `checkVisibility` API
-// https://drafts.csswg.org/cssom-view-1/#dom-element-checkvisibility
-HTMLElement.prototype.checkVisibility = function (options) {
-  throw new Error(`Not implemented: WebKit doesn't support checkVisibility `);
 };
 
 // This function  helps us debug better when an error occurs because a certain mock is missing
@@ -106,7 +107,7 @@ export const XPCOMUtils = withNotImplementedError({
     prop,
     pref,
     defaultValue = null,
-    onUpdate = null,
+    onUpdate,
     transform = val => val
   ) => {
     if (!Object.keys(IOSAppConstants.prefs).includes(pref)) {
@@ -117,12 +118,18 @@ export const XPCOMUtils = withNotImplementedError({
   defineLazyModuleGetters(obj, modules) {
     internalModuleResolvers.resolveModules(obj, modules);
   },
+  defineLazyServiceGetter() {
+    // Don't do anything
+    // We need this for OS Auth fixes for formautofill.
+    // TODO(issam, Bug 1894967): Move os auth to separate module and remove this.
+  },
 });
 
 // eslint-disable-next-line no-shadow
 export const ChromeUtils = withNotImplementedError({
   defineLazyGetter: (obj, prop, getFn) => {
-    obj[prop] = getFn?.call(obj);
+    const callback = prop === "log" ? genericLogger : getFn;
+    obj[prop] = callback?.call(obj);
   },
   defineESModuleGetters(obj, modules) {
     internalModuleResolvers.resolveModules(obj, modules);
@@ -171,37 +178,13 @@ export const Services = withNotImplementedError({
       }
 
       // eslint-disable-next-line no-undef
-      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage({
-        type: "scalar",
-        name: scalarName,
-        value: scalarValue,
-      });
-    },
-    recordEvent: (category, method, object, value, extra) => {
-      // For now, we only care about the address form telemetry
-      // TODO(FXCM-935): move address telemetry to Glean so we can remove this
-      // Data format of the sent message is:
-      // {
-      //   type: "event",
-      //   category: "address",
-      //   method: "detected" | "filled" | "filled_modified",
-      //   object: "address_form" | "address_form_ext",
-      //   value: String,
-      //   extra: Any,
-      // }
-      if (category !== "address") {
-        return;
-      }
-
-      // eslint-disable-next-line no-undef
-      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage({
-        type: "event",
-        category,
-        method,
-        object,
-        value,
-        extra,
-      });
+      webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage(
+        JSON.stringify({
+          type: "scalar",
+          object: scalarName,
+          value: scalarValue,
+        })
+      );
     },
   }),
   // TODO(FXCM-936): we should use crypto.randomUUID() instead of Services.uuid.generateUUID() in our codebase
@@ -218,18 +201,60 @@ window.Localization = function () {
   return { formatValueSync: () => "" };
 };
 
-// For now, we ignore all calls to glean.
-// TODO(FXCM-935): move address telemetry to Glean so we can create a universal mock for glean that
-// dispatches telemetry messages to the iOS.
+// TODO(issam, FXCM-935): In order to create create a universal mock for glean that
+// dispatches telemetry messages to the iOS, we need to modify typedefs in swift. For now, we map the telemetry events
+// to the expected shape. FXCM-935 will tackle cleaning this up.
 window.Glean = {
   formautofillCreditcards: undefinedProxy(),
   formautofill: undefinedProxy(),
+  creditcard: undefinedProxy(),
+  _mapGleanToLegacy: (eventName, { value, ...extra }) => {
+    const eventMapping = {
+      filledModifiedAddressForm: {
+        method: "filled_modified",
+        object: "address_form",
+      },
+      filledAddressForm: { method: "filled", object: "address_form" },
+      detectedAddressForm: { method: "detected", object: "address_form" },
+      filledModifiedAddressFormExt: {
+        method: "filled_modified",
+        object: "address_form_ext",
+      },
+      filledAddressFormExt: { method: "filled", object: "address_form_ext" },
+      detectedAddressFormExt: {
+        method: "detected",
+        object: "address_form_ext",
+      },
+    };
+    // eslint-disable-next-line no-undef
+    webkit.messageHandlers.addressFormTelemetryMessageHandler.postMessage(
+      JSON.stringify({
+        type: "event",
+        category: "address",
+        ...eventMapping[eventName],
+        value,
+        extra,
+      })
+    );
+  },
+  address: new Proxy(
+    {},
+    {
+      get(_target, prop) {
+        return {
+          record: extras => Glean._mapGleanToLegacy(prop, extras),
+        };
+      },
+    }
+  ),
 };
 
-export const windowUtils = withNotImplementedError({
-  removeManuallyManagedState: () => {},
-  addManuallyManagedState: () => {},
-});
-window.windowUtils = windowUtils;
+const genericLogger = () =>
+  withNotImplementedError({
+    info: () => {},
+    error: () => {},
+    warn: () => {},
+    debug: () => {},
+  });
 
 export { IOSAppConstants as AppConstants } from "resource://gre/modules/shared/Constants.ios.mjs";
