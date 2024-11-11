@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "ຮຽນຮູ້ເພີ່ມເຕີມ";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "ເພື່ອບັນທຶກ ແລະ ເພີ່ມການລັອກອິນ ແລະ ລະຫັດຜ່ານແບບອັດຕະໂນມັດ, ເປີດນຳໃຊ້  Face ID, Touch ID ຫລື ພາສໂຄດຂອງອຸປະກອນ.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "ດຳເນີາການຕໍ່";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "ຕົວກັ່ນຕອງ";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "ການເຂົ້າສູ່ລະບົບທີ່ບັນທຶກໄວ້ຈະປາກົດຢູ່ບ່ອນນີ້. ຖ້າທ່ານບັນທຶກການເຂົ້າສູ່ລະບົບຂອງທ່ານໄປທີ່ %@ ໃນອຸປະກອນອື່ນ, ເຂົ້າສູ່ລະບົບບັນຊີຂອງທ່ານ.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "ບໍ່ພົບການລັອກອິນ";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "ບໍ່ມີຜົນໄດ້ຮັບທີ່ກົງກັບການຄົ້ນຫາຂອງທ່ານ.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "ບໍ່ມີການລັອກອິນທີ່ກົງກັນ";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "ຍົກເລີກ";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "ຄົ້ນຫາຂໍ້ມູນການລັອກອິນ";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "ເລືອກລະຫັດຜ່ານເພື່ອຕື່ມຂໍ້ມູນໃສ່";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "URL (ແທນທີ່ Query ດ້ວຍ %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "ຕື່ມບັດເຄຣດິດອັດຕະໂນມັດ";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "ລົບລ້າງຂໍ້ມູນເວັບໄຊທັງໝົດ";

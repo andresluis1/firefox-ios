@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Zjistit více";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "Pro ukládání a automatické vyplňování přihlašovacích údajů si na svém zařízení nastavte Face ID, Touch ID nebo kód zámku.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Pokračovat";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Hledat";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Zde se zobrazí uložená přihlášení. Pokud jste přihlašovací údaje uložili do %@ na jiném zařízení, přihlaste se ke svému účtu.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Nenalezeny žádné přihlašovací údaje";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Vašemu vyhledávání neodpovídají žádné přihlašovací údaje.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Žádné odpovídající přihlašovací údaje";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Zrušit";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Hledat přihlašovací údaje";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Vyberte heslo, které chcete vyplnit";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "URL (vyhledávaný výraz nahraďte za %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Automaticky vyplňovat informace o platebních kartách";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Smazat všechna data stránek";
