@@ -646,9 +646,6 @@
 /* Title of the Learn More button that links to a support page about device passcode requirements. */
 "Logins.DevicePasscodeRequired.LearnMoreButtonTitle" = "Issin ugar";
 
-/* Message shown when you enter Logins & Passwords without having a device passcode set. */
-"Logins.DevicePasscodeRequired.Message" = "I usekles d taččart s wudem awurman inekcam d wawalen uffiren, rmed Face ID, Touch ID neɣ tangalt n uεeddi n yibenk.";
-
 /* Title of the Continue button. */
 "Logins.Onboarding.ContinueButtonTitle" = "Kemmel";
 
@@ -694,23 +691,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Zizdeg";
 
-/* Label shown when there are no logins to list. The placeholder will be replaced with the app name. */
-"LoginsList.NoLoginsFound.Description.v119" = "Inekcamen ittwaskelsen ad ttwaseknen da. Ma yella teskelseḍ inekcam-ik·im ɣer %@ deg ibenk niḍen, qqen ɣer umiḍan-ik.";
-
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Ulac inek am yettwafen";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Ula d yiwen n ugmuḍ ur yemmenṭaḍ d unadi-ik.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Ulac asulay immenṭaḍen";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Sefsex";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Nadi inekcam";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "Fren awal uffir ara teččareḍ";
@@ -1158,9 +1143,6 @@
 
 /* The placeholder for URL Field when saving a custom search engine */
 "Settings.AddCustomEngine.URLPlaceholder" = "Tansa URL (Semselsi anadi s %s)";
-
-/* Label used as an item in Settings screen. When touched, it will take user to credit card settings page to that will allows to add or modify saved credit cards to allow autofill in a webpage. */
-"Settings.AutofillCreditCard.Title.v112" = "Smed s wudem awurman tikarḍiwin n usmad";
 
 /* Button in Data Management that clears all items. */
 "Settings.ClearAllWebsiteData.Clear.Button" = "Sfeḍ akk isefka n usmel Web";
