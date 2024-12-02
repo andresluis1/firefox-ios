@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "حال ہی میں ملاحظہ کی گئی";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "تیز راہ";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "قطاریں سیٹ کریں";
 
@@ -658,20 +655,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "فلٹر";
 
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "کوئی لاگ ان نہیں ملا";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "آپ کی تلاش سے مماثل کوئی نتائج نہیں مل رہے ہیں۔";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "کوئی مماثل لاگ ان نہیں۔";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "منسوخ کریں";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "لاگ ان تلاش کریں";
 
 /* Label displaying select a password to fill instruction */
 "LoginsList.SelectPassword.Title" = "بھرنے کے لیے پاس ورڈ منتخب کریں۔";
