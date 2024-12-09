@@ -1,7 +1,4 @@
 /* Title label for the view where user can add their credit card info */
-"CreditCard.EditCard.AddCreditCardTitle.v113" = "添加信用卡";
-
-/* Title label for the view where user can add their credit card info */
 "CreditCard.EditCard.AddCreditCardTitle.v122" = "添加信用卡";
 
 /* Button label for cancelling editing of the credit card details shown in the form */
@@ -29,7 +26,7 @@
 "CreditCard.EditCard.ExpiredDateTitle.v112" = "有效期 %@";
 
 /* Title label for user to input their name printed on their credit card in the text box below. */
-"CreditCard.EditCard.NameOnCardTitle.v112" = "持卡人姓名";
+"CreditCard.EditCard.NameOnCardTitle.v112" = "卡面姓名";
 
 /* Button title which, when tapped, will allow the user to save valid credit card details. */
 "CreditCard.EditCard.NavButtonSaveTitle.v112" = "保存";
@@ -45,9 +42,6 @@
 
 /* Button label for saving the credit card details user entered in the form */
 "CreditCard.EditCard.SaveNavBarButtonLabel.v113" = "保存";
-
-/* Title label for user to use the toggle settings to allow saving and autofilling of credit cards for webpages. */
-"CreditCard.EditCard.ToggleToAllowAutofillTitle.v112" = "保存并自动填充信用卡信息";
 
 /* Title label for user to use the toggle settings to allow saving and autofilling of credit cards for webpages. */
 "CreditCard.EditCard.ToggleToAllowAutofillTitle.v122" = "保存和填充付款方式";
