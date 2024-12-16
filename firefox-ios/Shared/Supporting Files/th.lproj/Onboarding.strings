@@ -1,6 +1,9 @@
 /* The title of the button on the Default Browser Popup, which is a card with instructions telling the user how to set Firefox as their default browser. */
 "DefaultBrowserPopup.ButtonTitle.v114" = "ไปยังการตั้งค่า";
 
+/* The footer label on the Default Browser Popup, which is below all the instructions asking the users if their Firefox browser is the default browser. If it is then close this message and tap skip. The *text inside asterisks* denotes part of the string to bold, please leave the text inside the '*' so that it is bolded correctly. */
+"DefaultBrowserPopup.DescriptionFooter.v124" = "*%@ เป็นเบราว์เซอร์เริ่มต้นแล้วหรือยัง?* ปิดข้อความนี้แล้วแตะที่ “ข้าม”";
+
 /* The first label on the Default Browser Popup, which is a card with instructions telling the user how to set Firefox as their default browser. The *text inside asterisks* denotes part of the string to bold, please leave the text inside the '*' so that it is bolded correctly. */
 "DefaultBrowserPopup.FirstLabel.v114" = "1. ไปยัง *การตั้งค่า*";
 
@@ -87,9 +90,6 @@
 
 /* String used to describe the option to continue to ask for the notification permission in Firefox Onboarding screens. */
 "Onboarding.Notification.TurnOnNotifications.Action.v114" = "เปิดการแจ้งเตือน";
-
-/* String used to describes the description of what Firefox is on the Sync onboarding page for current version in our Onboarding screens. Placeholder is for the app name. */
-"Onboarding.Sync.Description.v120" = "เมื่อคุณลงชื่อเข้าและซิงค์แล้ว คุณจะปลอดภัยยิ่งขึ้น %@ จะเข้ารหัสลับรหัสผ่าน ที่คั่นหน้า และอื่น ๆ ของคุณ";
 
 /* String used to describes the description of what Firefox is on the Sync onboarding page for current version in our Onboarding screens. Placeholder is for the app name. */
 "Onboarding.Sync.Description.v123" = "%@ เข้ารหัสรหัสผ่าน ที่คั่นหน้า และอื่นๆ ของคุณเมื่อคุณซิงค์";

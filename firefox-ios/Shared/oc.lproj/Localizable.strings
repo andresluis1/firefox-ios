@@ -25,9 +25,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Visitats fa res";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Acorchis";
-
 /* Accessibility label for the Add Tab button in the Tab Tray. */
 "Add Tab" = "Apondre un onlget";
 
@@ -504,9 +501,6 @@
 
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Anullar";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Recercar d’identificants";
 
 /* Restore Tabs Prompt Description */
 "Looks like Firefox crashed previously. Would you like to restore your tabs?" = "Sembla que Firefox a fracassat. Volètz restablir los onglets ?";

@@ -37,9 +37,6 @@
 /* Section title label for recently visited websites */
 "ActivityStream.RecentHistory.Title" = "Kabibisita Lang";
 
-/* Section title label for Shortcuts */
-"ActivityStream.Shortcuts.SectionTitle" = "Mga Shortcuts";
-
 /* The title for the setting page which lets you select the number of top site rows */
 "ActivityStream.TopSites.RowSettingFooter" = "I-set ang mga Row";
 
@@ -646,20 +643,11 @@
 /* Placeholder test for search box in logins list view. */
 "LoginsList.LoginsListSearchPlaceholder" = "Filter";
 
-/* Label shown when there are no logins saved */
-"LoginsList.NoLoginsFound.Title" = "Walang natagpuang mga login";
-
 /* Label that appears after the search if there are no logins matching the search */
 "LoginsList.NoMatchingResult.Subtitle" = "Walang resultang tumugma sa iyong hinahanap.";
 
-/* Label displayed when a user searches and no matches can be found against the search query */
-"LoginsList.NoMatchingResult.Title" = "Walang katugmang mga login";
-
 /* Title for cancel button for user to stop searching for a particular login */
 "LoginsList.Search.Cancel" = "Kanselahin";
-
-/* Placeholder text for search field */
-"LoginsList.Search.Placeholder" = "Hanapin sa mga login";
 
 /* Title for the list of logins */
 "LoginsList.Title" = "SAVED LOGINS";

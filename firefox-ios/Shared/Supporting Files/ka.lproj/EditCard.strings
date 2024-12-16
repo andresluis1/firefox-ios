@@ -1,5 +1,5 @@
 /* Title label for the view where user can add their credit card info */
-"CreditCard.EditCard.AddCreditCardTitle.v113" = "საკრედიტო ბარათის დამატება";
+"CreditCard.EditCard.AddCreditCardTitle.v122" = "ბარათის დამატება";
 
 /* Button label for cancelling editing of the credit card details shown in the form */
 "CreditCard.EditCard.CancelNavBarButtonLabel.v113" = "გაუქმება";
@@ -44,7 +44,7 @@
 "CreditCard.EditCard.SaveNavBarButtonLabel.v113" = "შენახვა";
 
 /* Title label for user to use the toggle settings to allow saving and autofilling of credit cards for webpages. */
-"CreditCard.EditCard.ToggleToAllowAutofillTitle.v112" = "ბარათების შენახვა და თვითშევსება";
+"CreditCard.EditCard.ToggleToAllowAutofillTitle.v122" = "შეინახეთ და შეავსეთ გადახდის საშუალებები";
 
 /* Title label for the view where user can view their credit card info */
 "CreditCard.EditCard.ViewCreditCardTitle.v116" = "ბარათის ნახვა";
