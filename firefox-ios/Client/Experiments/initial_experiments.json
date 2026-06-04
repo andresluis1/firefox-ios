@@ -2,20 +2,20 @@
   "data": [
     {
       "schemaVersion": "1.12.0",
-      "slug": "ios-onboarding-search-widget-rerun",
-      "id": "ios-onboarding-search-widget-rerun",
+      "slug": "ios-japan-onboarding-with-video-release",
+      "id": "ios-japan-onboarding-with-video-release",
       "arguments": {},
-      "application": "org.mozilla.ios.Firefox",
+      "application": "org.mozilla.ios.FirefoxBeta",
       "appName": "firefox_ios",
-      "appId": "org.mozilla.ios.Firefox",
-      "channel": "release",
-      "userFacingName": "iOS Onboarding - Search Widget (RERUN)",
-      "userFacingDescription": "Onboarding experiment",
-      "isEnrollmentPaused": true,
+      "appId": "org.mozilla.ios.FirefoxBeta",
+      "channel": "beta",
+      "userFacingName": "iOS - Japan Onboarding with Video - Beta",
+      "userFacingDescription": "Japan Onboarding with Video",
+      "isEnrollmentPaused": false,
       "isRollout": false,
       "bucketConfig": {
         "randomizationUnit": "nimbus_id",
-        "namespace": "ios-onboarding-framework-feature-release-10",
+        "namespace": "ios-onboarding-framework-feature-beta-5",
         "start": 0,
         "count": 10000,
         "total": 10000
@@ -24,16 +24,7 @@
         "onboarding-framework-feature"
       ],
       "probeSets": [],
-      "outcomes": [
-        {
-          "slug": "onboarding",
-          "priority": "primary"
-        },
-        {
-          "slug": "default_browser",
-          "priority": "secondary"
-        }
-      ],
+      "outcomes": [],
       "branches": [
         {
           "slug": "control",
@@ -46,13 +37,242 @@
           "features": [
             {
               "featureId": "onboarding-framework-feature",
+              "enabled": true,
+              "value": {
+                "enable-modern-ui": true,
+                "should-use-japan-configuration": true,
+                "enable-video-intro": false
+              }
+            }
+          ]
+        },
+        {
+          "slug": "treatment-a",
+          "ratio": 1,
+          "feature": {
+            "featureId": "this-is-included-for-mobile-pre-96-support",
+            "enabled": false,
+            "value": {}
+          },
+          "features": [
+            {
+              "featureId": "onboarding-framework-feature",
+              "enabled": true,
+              "value": {
+                "enable-modern-ui": true,
+                "should-use-japan-configuration": true,
+                "enable-video-intro": true
+              }
+            }
+          ]
+        }
+      ],
+      "targeting": "(app_version|versionCompare('149.3.0') >= 0) && (language in ['ja'])",
+      "startDate": "2026-04-02",
+      "enrollmentEndDate": null,
+      "endDate": null,
+      "proposedDuration": 28,
+      "proposedEnrollment": 7,
+      "referenceBranch": "control",
+      "featureValidationOptOut": false,
+      "localizations": null,
+      "locales": null,
+      "publishedDate": "2026-04-02T17:39:29.543803Z",
+      "isFirefoxLabsOptIn": false,
+      "firefoxLabsTitle": "",
+      "firefoxLabsDescription": "",
+      "firefoxLabsDescriptionLinks": null,
+      "firefoxLabsGroup": "",
+      "requiresRestart": false
+    },
+    {
+      "schemaVersion": "1.12.0",
+      "slug": "ios-translations-phase-2",
+      "id": "ios-translations-phase-2",
+      "arguments": {},
+      "application": "org.mozilla.ios.Firefox",
+      "appName": "firefox_ios",
+      "appId": "org.mozilla.ios.Firefox",
+      "channel": "release",
+      "userFacingName": "iOS Translations - Phase 2",
+      "userFacingDescription": "iOS Translations - Phase 2",
+      "isEnrollmentPaused": false,
+      "isRollout": true,
+      "bucketConfig": {
+        "randomizationUnit": "nimbus_id",
+        "namespace": "ios-translations-feature-release-no_targeting-rollout-3",
+        "start": 0,
+        "count": 10000,
+        "total": 10000
+      },
+      "featureIds": [
+        "translations-feature"
+      ],
+      "probeSets": [],
+      "outcomes": [],
+      "branches": [
+        {
+          "slug": "control",
+          "ratio": 1,
+          "feature": {
+            "featureId": "this-is-included-for-mobile-pre-96-support",
+            "enabled": false,
+            "value": {}
+          },
+          "features": [
+            {
+              "featureId": "translations-feature",
+              "enabled": true,
+              "value": {
+                "languagePickerEnabled": true
+              }
+            }
+          ]
+        }
+      ],
+      "targeting": "(app_version|versionCompare('151.!') >= 0) && (user_disabled_ai == false)",
+      "startDate": "2026-05-19",
+      "enrollmentEndDate": null,
+      "endDate": null,
+      "proposedDuration": 28,
+      "proposedEnrollment": 7,
+      "referenceBranch": "control",
+      "featureValidationOptOut": false,
+      "localizations": null,
+      "locales": null,
+      "publishedDate": "2026-05-19T22:30:29.542226Z",
+      "isFirefoxLabsOptIn": false,
+      "firefoxLabsTitle": "",
+      "firefoxLabsDescription": "",
+      "firefoxLabsDescriptionLinks": null,
+      "firefoxLabsGroup": "",
+      "requiresRestart": false
+    },
+    {
+      "schemaVersion": "1.12.0",
+      "slug": "ios-worldcup-feature-1512",
+      "id": "ios-worldcup-feature-1512",
+      "arguments": {},
+      "application": "org.mozilla.ios.Firefox",
+      "appName": "firefox_ios",
+      "appId": "org.mozilla.ios.Firefox",
+      "channel": "release",
+      "userFacingName": "iOS - Worldcup Feature 151.2+",
+      "userFacingDescription": "iOS - Worldcup Feature",
+      "isEnrollmentPaused": false,
+      "isRollout": false,
+      "bucketConfig": {
+        "randomizationUnit": "nimbus_id",
+        "namespace": "ios-world-cup-widget-feature-release-2",
+        "start": 0,
+        "count": 10000,
+        "total": 10000
+      },
+      "featureIds": [
+        "world-cup-widget-feature"
+      ],
+      "probeSets": [],
+      "outcomes": [],
+      "branches": [
+        {
+          "slug": "control",
+          "ratio": 1,
+          "feature": {
+            "featureId": "this-is-included-for-mobile-pre-96-support",
+            "enabled": false,
+            "value": {}
+          },
+          "features": [
+            {
+              "featureId": "world-cup-widget-feature",
+              "enabled": true,
+              "value": {
+                "enabled": false
+              }
+            }
+          ]
+        },
+        {
+          "slug": "treatment-a",
+          "ratio": 19,
+          "feature": {
+            "featureId": "this-is-included-for-mobile-pre-96-support",
+            "enabled": false,
+            "value": {}
+          },
+          "features": [
+            {
+              "featureId": "world-cup-widget-feature",
+              "enabled": true,
+              "value": {
+                "enabled": true
+              }
+            }
+          ]
+        }
+      ],
+      "targeting": "((is_already_enrolled) || ((app_version|versionCompare('151.2.0') >= 0)))",
+      "startDate": "2026-06-02",
+      "enrollmentEndDate": null,
+      "endDate": null,
+      "proposedDuration": 28,
+      "proposedEnrollment": 14,
+      "referenceBranch": "control",
+      "featureValidationOptOut": false,
+      "localizations": null,
+      "locales": null,
+      "publishedDate": "2026-06-02T19:21:07.642032Z",
+      "isFirefoxLabsOptIn": false,
+      "firefoxLabsTitle": "",
+      "firefoxLabsDescription": "",
+      "firefoxLabsDescriptionLinks": null,
+      "firefoxLabsGroup": "",
+      "requiresRestart": false
+    },
+    {
+      "schemaVersion": "1.12.0",
+      "slug": "long-term-holdback-2025-h1-growth-ios",
+      "id": "long-term-holdback-2025-h1-growth-ios",
+      "arguments": {},
+      "application": "org.mozilla.ios.Firefox",
+      "appName": "firefox_ios",
+      "appId": "org.mozilla.ios.Firefox",
+      "channel": "release",
+      "userFacingName": "Long term holdback 2025 H1 Growth iOS",
+      "userFacingDescription": "Long-term holdback for growth experiments",
+      "isEnrollmentPaused": false,
+      "isRollout": false,
+      "bucketConfig": {
+        "randomizationUnit": "nimbus_id",
+        "namespace": "ios-no-feature-ios-release-2",
+        "start": 0,
+        "count": 10000,
+        "total": 10000
+      },
+      "featureIds": [
+        "no-feature-ios"
+      ],
+      "probeSets": [],
+      "outcomes": [],
+      "branches": [
+        {
+          "slug": "delivery",
+          "ratio": 19,
+          "feature": {
+            "featureId": "this-is-included-for-mobile-pre-96-support",
+            "enabled": false,
+            "value": {}
+          },
+          "features": [
+            {
+              "featureId": "no-feature-ios",
               "enabled": true,
               "value": {}
             }
           ]
         },
         {
-          "slug": "treatment-a",
+          "slug": "holdback",
           "ratio": 1,
           "feature": {
             "featureId": "this-is-included-for-mobile-pre-96-support",
@@ -61,200 +281,58 @@
           },
           "features": [
             {
-              "featureId": "onboarding-framework-feature",
+              "featureId": "no-feature-ios",
               "enabled": true,
-              "value": {
-                "cards": {
-                  "welcome": {
-                    "image": "search-widget",
-                    "title": "Try the Firefox search widget",
-                    "body": "Quick searches are just a tap away with Firefox on your Home Screen.",
-                    "link": {
-                      "title": "Firefox privacy notice"
-                    },
-                    "buttons": {
-                      "primary": {
-                        "title": "Show Me How",
-                        "action": "open-instructions-popup"
-                      },
-                      "secondary": {
-                        "title": "Onboarding/Onboarding.Welcome.Skip.v114",
-                        "action": "next-card"
-                      }
-                    },
-                    "instructions-popup": {
-                      "title": "Add Firefox Search Widget to Home Screen",
-                      "button-title": "Got It",
-                      "button-action": "dismiss-and-next-card",
-                      "instructions": [
-                        "1. Long press on the *Home Screen* until the icons start to jiggle.",
-                        "2. Tap on the *plus icon*.",
-                        "3. *Search for Firefox*, then choose a widget."
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        {
-          "slug": "treatment-b",
-          "ratio": 1,
-          "feature": {
-            "featureId": "this-is-included-for-mobile-pre-96-support",
-            "enabled": false,
-            "value": {}
-          },
-          "features": [
-            {
-              "featureId": "onboarding-framework-feature",
-              "enabled": true,
-              "value": {
-                "cards": {
-                  "search-widget": {
-                    "order": 20,
-                    "image": "search-widget",
-                    "title": "Try the Firefox search widget",
-                    "body": "Quick searches are just a tap away with Firefox on your Home Screen.",
-                    "buttons": {
-                      "primary": {
-                        "title": "Show Me How",
-                        "action": "open-instructions-popup"
-                      },
-                      "secondary": {
-                        "title": "Onboarding/Onboarding.Welcome.Skip.v114",
-                        "action": "next-card"
-                      }
-                    },
-                    "instructions-popup": {
-                      "title": "Add Firefox Search Widget to Home Screen",
-                      "button-title": "Got It",
-                      "button-action": "dismiss-and-next-card",
-                      "instructions": [
-                        "1. Long press on the *Home Screen* until the icons start to jiggle.",
-                        "2. Tap on the *plus icon*.",
-                        "3. *Search for Firefox*, then choose a widget."
-                      ]
-                    }
-                  },
-                  "sign-to-sync": {
-                    "order": 30
-                  },
-                  "notification-permissions": {
-                    "order": 40
-                  }
-                }
-              }
+              "value": {}
             }
           ]
         }
       ],
-      "targeting": "((is_already_enrolled) || ((isFirstRun == 'true') && (app_version|versionCompare('122.!') >= 0) && (language in ['en'])))",
-      "startDate": "2024-02-02",
-      "enrollmentEndDate": "2024-02-20",
+      "targeting": "((is_already_enrolled) || ((app_version|versionCompare('123.!') >= 0)))",
+      "startDate": "2024-12-12",
+      "enrollmentEndDate": null,
       "endDate": null,
-      "proposedDuration": 25,
-      "proposedEnrollment": 14,
-      "referenceBranch": "control",
+      "proposedDuration": 100,
+      "proposedEnrollment": 100,
+      "referenceBranch": "holdback",
       "featureValidationOptOut": false,
       "localizations": null,
       "locales": null,
-      "publishedDate": "2024-02-02T17:49:54.083724Z"
+      "publishedDate": "2024-12-12T20:37:24.603794Z",
+      "isFirefoxLabsOptIn": false,
+      "firefoxLabsTitle": null,
+      "firefoxLabsDescription": null,
+      "firefoxLabsDescriptionLinks": null,
+      "firefoxLabsGroup": null,
+      "requiresRestart": false
     },
     {
       "schemaVersion": "1.12.0",
-      "slug": "ios-search-bar-placement-v2-treatment-a-rollout",
-      "id": "ios-search-bar-placement-v2-treatment-a-rollout",
+      "slug": "shake-to-summarize-mistral-rollout-languages",
+      "id": "shake-to-summarize-mistral-rollout-languages",
       "arguments": {},
       "application": "org.mozilla.ios.Firefox",
       "appName": "firefox_ios",
       "appId": "org.mozilla.ios.Firefox",
       "channel": "release",
-      "userFacingName": "iOS Search Bar Placement v2 - Treatment A Rollout",
-      "userFacingDescription": "Search Bar Placement",
+      "userFacingName": "Shake to Summarize - Mistral Rollout Languages",
+      "userFacingDescription": "Summarizer",
       "isEnrollmentPaused": false,
       "isRollout": true,
       "bucketConfig": {
         "randomizationUnit": "nimbus_id",
-        "namespace": "ios-search-release-mobile_first_run-rollout-1",
+        "namespace": "ios-hosted-summarizer-feature-summarizer-app-attest-auth-feature-summarizer-language-expansion-feature-release-no_targeting-rollout-3",
         "start": 0,
         "count": 10000,
         "total": 10000
       },
       "featureIds": [
-        "search"
+        "hosted-summarizer-feature",
+        "summarizer-app-attest-auth-feature",
+        "summarizer-language-expansion-feature"
       ],
       "probeSets": [],
       "outcomes": [],
-      "branches": [
-        {
-          "slug": "treatment-a",
-          "ratio": 1,
-          "feature": {
-            "featureId": "this-is-included-for-mobile-pre-96-support",
-            "enabled": false,
-            "value": {}
-          },
-          "features": [
-            {
-              "featureId": "search",
-              "enabled": true,
-              "value": {
-                "awesome-bar": {
-                  "position": {
-                    "is-position-feature-enabled": true,
-                    "is-bottom": false,
-                    "is-toolbar-cfr-on": false
-                  }
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "targeting": "((is_already_enrolled) || ((isFirstRun == 'true') && (app_version|versionCompare('113.!') >= 0)))",
-      "startDate": "2023-04-17",
-      "enrollmentEndDate": null,
-      "endDate": null,
-      "proposedDuration": 28,
-      "proposedEnrollment": 7,
-      "referenceBranch": "treatment-a",
-      "featureValidationOptOut": false,
-      "localizations": null,
-      "locales": null,
-      "publishedDate": null
-    },
-    {
-      "schemaVersion": "1.12.0",
-      "slug": "set-to-default-reminder-notification-for-ios",
-      "id": "set-to-default-reminder-notification-for-ios",
-      "arguments": {},
-      "application": "org.mozilla.ios.Firefox",
-      "appName": "firefox_ios",
-      "appId": "org.mozilla.ios.Firefox",
-      "channel": "release",
-      "userFacingName": "Set to Default reminder notification for iOS",
-      "userFacingDescription": "This experiment will test a notification reminding users to set Firefox as their default browser.",
-      "isEnrollmentPaused": true,
-      "isRollout": false,
-      "bucketConfig": {
-        "randomizationUnit": "nimbus_id",
-        "namespace": "ios-messaging-release-22",
-        "start": 0,
-        "count": 10000,
-        "total": 10000
-      },
-      "featureIds": [
-        "messaging"
-      ],
-      "probeSets": [],
-      "outcomes": [
-        {
-          "slug": "default_browser",
-          "priority": "primary"
-        }
-      ],
       "branches": [
         {
           "slug": "control",
@@ -266,77 +344,58 @@
           },
           "features": [
             {
-              "featureId": "messaging",
+              "featureId": "hosted-summarizer-feature",
               "enabled": true,
               "value": {
-                "messages": {
-                  "{experiment}-en": {
-                    "is-control": true,
-                    "surface": "notification",
-                    "style": "NOTIFICATION",
-                    "action": "MAKE_DEFAULT_BROWSER_WITH_TUTORIAL",
-                    "trigger": [
-                      "DAY_3_AFTER_INSTALL",
-                      "I_AM_NOT_DEFAULT_BROWSER",
-                      "ALLOWED_TIPS_NOTIFICATIONS"
-                    ],
-                    "experiment": "{experiment}"
-                  }
-                },
-                "triggers": {
-                  "DAY_3_AFTER_INSTALL": "days_since_install >= 3"
-                }
+                "enabled": true,
+                "toolbarEntrypoint": true,
+                "shakeGesture": true
               }
-            }
-          ]
-        },
-        {
-          "slug": "treatment-a",
-          "ratio": 1,
-          "feature": {
-            "featureId": "this-is-included-for-mobile-pre-96-support",
-            "enabled": false,
-            "value": {}
-          },
-          "features": [
+            },
             {
-              "featureId": "messaging",
+              "featureId": "summarizer-app-attest-auth-feature",
               "enabled": true,
               "value": {
-                "messages": {
-                  "{experiment}-en": {
-                    "title": "Firefox is Fast and Private",
-                    "text": "Make Firefox your default browser",
-                    "surface": "notification",
-                    "style": "NOTIFICATION",
-                    "action": "MAKE_DEFAULT_BROWSER_WITH_TUTORIAL",
-                    "trigger": [
-                      "DAY_3_AFTER_INSTALL",
-                      "I_AM_NOT_DEFAULT_BROWSER",
-                      "ALLOWED_TIPS_NOTIFICATIONS"
-                    ],
-                    "experiment": "{experiment}"
-                  }
-                },
-                "triggers": {
-                  "DAY_3_AFTER_INSTALL": "days_since_install >= 3"
-                }
+                "enabled": true
+              }
+            },
+            {
+              "featureId": "summarizer-language-expansion-feature",
+              "enabled": true,
+              "value": {
+                "enabled": true,
+                "supportedLocales": [
+                  "ja",
+                  "jp",
+                  "en",
+                  "es",
+                  "de",
+                  "fr",
+                  "pt",
+                  "it"
+                ]
               }
             }
           ]
         }
       ],
-      "targeting": "((is_already_enrolled) || ((isFirstRun == 'true') && (app_version|versionCompare('120.!') >= 0) && (language in ['en'])))",
-      "startDate": "2024-01-23",
-      "enrollmentEndDate": "2024-02-14",
+      "targeting": "((is_already_enrolled) || ((app_version|versionCompare('151.!') >= 0) && (language in ['de', 'en', 'es', 'fr', 'it', 'ja', 'pt']))) && (user_disabled_ai == false)",
+      "startDate": "2026-05-19",
+      "enrollmentEndDate": null,
       "endDate": null,
-      "proposedDuration": 43,
-      "proposedEnrollment": 14,
+      "proposedDuration": 28,
+      "proposedEnrollment": 7,
       "referenceBranch": "control",
       "featureValidationOptOut": false,
       "localizations": null,
       "locales": null,
-      "publishedDate": null
+      "publishedDate": "2026-05-19T17:47:19.216360Z",
+      "isFirefoxLabsOptIn": false,
+      "firefoxLabsTitle": "",
+      "firefoxLabsDescription": "",
+      "firefoxLabsDescriptionLinks": null,
+      "firefoxLabsGroup": "",
+      "requiresRestart": false
     }
   ]
 }
